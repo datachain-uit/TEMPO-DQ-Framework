@@ -30,9 +30,11 @@ The dashboard fetches real-time data from Azure Cosmos DB. You need to manually 
 
 File: .env.local
 
+```bash
 COSMOS_ENDPOINT="azure_cosmos_endpoint_url"
 COSMOS_KEY="azure_cosmos_primary_key"
 COSMOS_DATABASE="mooccubex"
+```
 
 ### 4. Running the Development Server
 
