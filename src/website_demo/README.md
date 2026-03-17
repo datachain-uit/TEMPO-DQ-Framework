@@ -1,39 +1,46 @@
-# Student Learning Outcome Prediction System
+# Usage
 
-Dự án Student Learning Outcome Prediction là hệ thống demo phục vụ nghiên cứu nhằm dự đoán sớm kết quả học tập của sinh viên dựa trên các đặc trưng học tập (điểm số, hành vi học tập, dữ liệu lịch sử, v.v.).
+### 1. Prerequisites
 
-Hệ thống được xây dựng với mục tiêu minh họa toàn bộ pipeline nghiên cứu từ:
+- Node.js: Version 18.x or higher (LTS recommended).
 
-Thu thập dữ liệu
+- Package Manager: npm (comes with Node.js).
 
-Xử lý và suy luận mô hình
+If you don't have Node.js installed on your machine, follow these steps:
 
-Cung cấp kết quả dự đoán thông qua giao diện web
+- Download Node.js: Visit the official [Node.js website](https://nodejs.org/) and download the **LTS (Long Term Support)** version. This version includes **npm** (Node Package Manager) by default.
+- Verify Installation: Open your terminal/command prompt and run these commands to ensure everything is set up correctly:
+  ```bash
+  node -v
+  npm -v
+  ```
 
-## Cách chạy
+### 2. Installing
 
-### Frontend: Next.js 
-
-Lần đầu chạy sẽ cần cài đặt `pnpm`. Chạy lệnh sau:
-
-```bash
-npm install -g pnpm@latest
-```
-
-Sau đó chạy dự án bình thường:
-
-1. Cài đặt dependency:
+Clone the repository and navigate to the frontend directory. Since this project uses specific UI components, you must use the --legacy-peer-deps flag to avoid version conflicts between peer dependencies.
 
 ```bash
-pnpm install
+cd frontend
+npm install --legacy-peer-deps
 ```
 
-2. Chạy code:
+### 3. Environment Configuration
+
+The dashboard fetches real-time data from Azure Cosmos DB. You need to manually create a .env.local file in the frontend/ root directory.
+
+File: .env.local
+
+COSMOS_ENDPOINT="azure_cosmos_endpoint_url"
+COSMOS_KEY="azure_cosmos_primary_key"
+COSMOS_DATABASE="mooccubex"
+
+### 4. Running the Development Server
+
+Once the environment is configured, start the server:
+
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
-Trang web giờ đang ở http://localhost:3000.
-
-#### các file data đặt trong /data
+The application will be available at http://localhost:3000.
