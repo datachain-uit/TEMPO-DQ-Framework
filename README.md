@@ -55,6 +55,4 @@ Within this standardized workflow, TEMPO-DQ further embeds **(4) Automated DQ Me
 
 ## Usage
 
-## Contributors
-- **Leader**: M.Sc. IT. Thu Nguyen
-- **Members**: Man Nguyen, Ngoc Nguyen, Luan Nguyen, Anh Tran, Huong Lai
+
