@@ -57,10 +57,10 @@ const metricsRaw = {
   sleak: 0.5,
   S_san_plus: 0.626632277,
   Sperf: 0.4731626083,
-  Acc_DQ: 52.9433423, // Cái này thang 100
+  Acc_TEMPO: 52.9433423, // Cái này thang 100
 };
 
-// Chuyển đổi sang format cho biểu đồ (Loại Acc_DQ ra để hiển thị riêng)
+// Chuyển đổi sang format cho biểu đồ (Loại Acc_TEMPO ra để hiển thị riêng)
 const detailMetricsData = [
   { name: "snan", value: metricsRaw.snan, fill: "#3b82f6" }, // Blue
   { name: "smaj", value: metricsRaw.smaj, fill: "#8b5cf6" }, // Violet
@@ -216,14 +216,14 @@ export default function DataQualityPage() {
 
       {/* --- SECTION 2: DETAILED METRICS VISUALIZATION --- */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6">
-        {/* Thẻ riêng cho Acc-DQ (Thang 100) */}
+        {/* Thẻ riêng cho Acc-TEMPO (Thang 100) */}
         <Card className="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border-zinc-700 flex flex-col justify-center items-center text-center py-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
           <ShieldCheck className="w-12 h-12 text-indigo-400 mb-4" />
           <h2 className="text-5xl font-extrabold text-white tracking-tighter">
-            {metricsRaw.Acc_DQ.toFixed(2)}
+            {metricsRaw.Acc_TEMPO.toFixed(2)}
           </h2>
-          <p className="text-indigo-200 mt-2 font-medium">Acc-DQ Score</p>
+          <p className="text-indigo-200 mt-2 font-medium">Acc-TEMPO Score</p>
           <p className="text-zinc-400 text-xs mt-4 px-6">
             Overall Data Quality Accuracy (Scaled 1-100)
           </p>
