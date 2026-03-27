@@ -28,7 +28,7 @@ export async function GET() {
     });
 
   } catch (error) {
-    console.error("Overview API Error:", error); // Xem lỗi chi tiết ở Terminal
+    console.error("Overview API Error:", error); 
     return NextResponse.json({ error: String(error) }, { status: 500 });
   }
 }

@@ -80,14 +80,14 @@ export async function GET(request: Request) {
     }
 
     const labelQuery = {
-      query: `SELECT c.course_id, c.label FROM c WHERE ARRAY_CONTAINS(@ids, c.course_id)`,
+      query: `SELECT c.course_id, c.label_f FROM c WHERE ARRAY_CONTAINS(@ids, c.course_id)`,
       parameters: [{ name: "@ids", value: courseIds }]
     };
     const { resources: labelDocs } = await getContainer(cqContainerName).items.query(labelQuery).fetchAll();
 
     const finalLabels: Record<string, string> = {};
     courseIds.forEach(id => {
-        const labels = labelDocs.filter(d => d.course_id === id).map(d => d.label);
+        const labels = labelDocs.filter(d => d.course_id === id).map(d => d.label_f);
         finalLabels[id] = findMostFrequentLabel(labels);
     });
 

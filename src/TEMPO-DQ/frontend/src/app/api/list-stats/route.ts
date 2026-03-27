@@ -24,14 +24,12 @@ export async function GET() {
     }
 
     const courseList = cqDocs.map(item => {
-        // LOGIC CHỐNG TRƯỢT ID: Ép về chữ thường và cắt khoảng trắng để so sánh
         const info = cqCourseNames.find(n => 
             String(n.id).trim().toLowerCase() === String(item.course_id).trim().toLowerCase()
         );
         
         return {
             id: item.course_id,
-            // Nếu vẫn xui xẻo không tìm ra, sẽ hiện mã "Course C_123" thay vì "Unknown Course"
             name: info?.name || `Course ${item.course_id}`, 
             views: item.video_counts || item.attempts_sum || 0,
             exercises: item.ex_counts || item.problem_count || 0,

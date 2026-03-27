@@ -110,7 +110,7 @@ export default function OverviewPage() {
         // 1. Set Stats
         setStats(dataStats);
         
-        // 2. Set Pie Charts (Map thêm màu vào)
+        // 2. Set Pie Charts 
         setDistributions({
           course: (dataDist.courseDistribution || []).map((item: any) => ({
             name: item.name || "Unknown",
@@ -237,7 +237,7 @@ export default function OverviewPage() {
                     <TableCell className="text-center text-zinc-400">
                       <div className="flex justify-center items-center gap-1">
                          <PlayCircle className="w-3 h-3 text-zinc-500" /> 
-                         {Number(c.views).toLocaleString()}
+                         {(Number(c.views) || 0).toLocaleString()}
                       </div>
                     </TableCell>
                     <TableCell className="text-center text-zinc-400">

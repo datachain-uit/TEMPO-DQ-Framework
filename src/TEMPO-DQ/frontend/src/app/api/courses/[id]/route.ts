@@ -42,7 +42,7 @@ export async function GET(request: Request, props: Props) {
 
     // 2. Query CQ (Quality)
     const cqQuery = {
-      query: "SELECT c.chapter, c.label, c.label_3 FROM c WHERE c.course_id = @id",
+      query: "SELECT c.chapter, c.label, c.label_f FROM c WHERE c.course_id = @id",
       parameters: [{ name: "@id", value: courseId }]
     };
 
@@ -68,7 +68,7 @@ export async function GET(request: Request, props: Props) {
 
     allCQData.forEach(item => {
       // Logic lấy nhãn: Ưu tiên label -> label_3 -> bỏ qua nếu null
-      const label = item.label || item.label_3;
+      const label = item.label || item.label_f;
       if (!label) return;
 
       allLabels.push(label);

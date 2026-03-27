@@ -30,3 +30,26 @@ export const OVERVIEW_DATA: OverviewCard[] = [
       "Our model ingests multi-dimensional interaction data in real-time—spanning video engagement, assignment submission habits, and forum discussions—to construct a holistic learner profile.",
   },
 ];
+
+export const MEMBERS_DATA = [
+  {
+    id: 1,
+    name: "Nguyễn Anh Hải Ngọc",
+    role: "LO-research",
+  },
+  {
+    id: 2,
+    name: "Thu Hương",
+    role: "LO-research",
+  },
+  {
+    id: 3,
+    name: "Trần Kim Anh",
+    role: "LO-research",
+  },
+  {
+    id: 4,
+    name: "Nguyễn Đức Minh Mẫn",
+    role: "CQ-research",
+  },
+];
